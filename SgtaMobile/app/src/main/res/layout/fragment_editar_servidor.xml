@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EditarServidor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayoutcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/tv_cadastro_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Servidor"
+            app:layout_constraintBottom_toTopOf="@+id/divider_servidor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_servidor"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_cadastro_servidor" />
+
+        <TextView
+            android:id="@+id/tv_matricula_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Matricula"
+            app:layout_constraintStart_toStartOf="@+id/divider_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_servidor" />
+
+        <EditText
+            android:id="@+id/edt_matricula_servidor"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/tv_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matricula_servidor"
+            tools:layout_editor_absoluteX="9dp" />
+
+        <TextView
+            android:id="@+id/tv_cpf_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:text="Cpf"
+            app:layout_constraintStart_toEndOf="@+id/tv_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_servidor" />
+
+        <EditText
+            android:id="@+id/edt_cpf_servidor"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/edt_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cpf_servidor" />
+
+        <TextView
+            android:id="@+id/tv_nome_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            app:layout_constraintStart_toStartOf="@+id/edt_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_matricula_servidor" />
+
+        <EditText
+            android:id="@+id/nome_servidor"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_cpf_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_nome_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nome_servidor" />
+
+        <TextView
+            android:id="@+id/tv_telefone_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Telefone"
+            app:layout_constraintStart_toStartOf="@+id/nome_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/nome_servidor" />
+
+        <EditText
+            android:id="@+id/edt_tel_servidor"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/nome_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_telefone_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_telefone_servidor" />
+
+        <TextView
+            android:id="@+id/tv_cargo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Cargo"
+            app:layout_constraintStart_toStartOf="@+id/edt_tel_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_tel_servidor" />
+
+        <Spinner
+            android:id="@+id/edt_cargo"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_tel_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_cargo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cargo" />
+
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="@+id/edt_cargo"
+            app:layout_constraintStart_toStartOf="@+id/edt_cargo"
+            app:layout_constraintTop_toBottomOf="@+id/edt_cargo" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

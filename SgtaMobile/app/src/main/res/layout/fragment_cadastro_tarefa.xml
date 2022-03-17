@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CadastroServidor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayoutcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/tv_cadastro_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Tarefa"
+            app:layout_constraintBottom_toTopOf="@+id/divider_tarefa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_tarefa"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_cadastro_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_turma_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Turma"
+            app:layout_constraintStart_toStartOf="@+id/divider_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_tarefa" />
+
+        <Spinner
+            android:id="@+id/edt_turma_tarefa"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/tv_turma_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_turma_tarefa"
+            tools:layout_editor_absoluteX="9dp" />
+
+        <TextView
+            android:id="@+id/tv_disciplina_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="140dp"
+            android:text="Disciplina"
+            app:layout_constraintStart_toEndOf="@+id/tv_turma_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_tarefa" />
+
+        <Spinner
+            android:id="@+id/edt_disciplina_tarefa"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/edt_turma_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_disciplina_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_local_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Local"
+            app:layout_constraintStart_toStartOf="@+id/edt_turma_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/edt_turma_tarefa" />
+
+        <EditText
+            android:id="@+id/local_tarefa"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_disciplina_tarefa"
+            app:layout_constraintStart_toStartOf="@+id/tv_local_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_local_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_descricao_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Descrição"
+            app:layout_constraintStart_toStartOf="@+id/local_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/local_tarefa" />
+
+        <EditText
+            android:id="@+id/edt_descricao_tarefa"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/local_tarefa"
+            app:layout_constraintStart_toStartOf="@+id/tv_descricao_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descricao_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_inicio_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Inicio"
+            app:layout_constraintStart_toStartOf="@+id/edt_descricao_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/edt_descricao_tarefa" />
+
+        <EditText
+            android:id="@+id/edt_inicio_tarefa"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="@+id/tv_inicio_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_inicio_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_termino_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="80dp"
+            android:text="Termino"
+            app:layout_constraintStart_toEndOf="@+id/tv_inicio_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/edt_descricao_tarefa" />
+
+        <EditText
+            android:id="@+id/edt_termino_tarefa"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintStart_toEndOf="@+id/edt_inicio_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_termino_tarefa" />
+
+        <TextView
+            android:id="@+id/tv_status_tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="0dp"
+            android:text="Status"
+            app:layout_constraintStart_toEndOf="@+id/tv_termino_tarefa"
+            app:layout_constraintTop_toTopOf="@+id/tv_termino_tarefa" />
+
+        <Spinner
+            android:id="@+id/edt_status_tarefa"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/edt_termino_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status_tarefa" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="@+id/edt_status_tarefa"
+            app:layout_constraintStart_toStartOf="@+id/edt_inicio_tarefa"
+            app:layout_constraintTop_toBottomOf="@+id/edt_termino_tarefa" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

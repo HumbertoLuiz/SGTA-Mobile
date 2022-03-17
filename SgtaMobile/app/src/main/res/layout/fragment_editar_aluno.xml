@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EditarAluno">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayoutcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_cadastro_aluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Aluno"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_cadastro_aluno" />
+
+        <TextView
+            android:id="@+id/tv_matricula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Matricula"
+            app:layout_constraintStart_toStartOf="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_aluno" />
+
+        <EditText
+            android:id="@+id/edt_matricula"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/tv_matricula"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matricula"
+            tools:layout_editor_absoluteX="9dp" />
+
+        <TextView
+            android:id="@+id/tv_cpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:text="Cpf"
+            app:layout_constraintStart_toEndOf="@+id/tv_matricula"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cadastro_aluno" />
+
+        <EditText
+            android:id="@+id/edt_cpf"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/edt_matricula"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cpf" />
+
+        <TextView
+            android:id="@+id/tv_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            app:layout_constraintStart_toStartOf="@+id/edt_matricula"
+            app:layout_constraintTop_toBottomOf="@+id/edt_matricula" />
+
+        <EditText
+            android:id="@+id/nome_aluno"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_cpf"
+            app:layout_constraintStart_toStartOf="@+id/tv_nome"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nome" />
+
+        <TextView
+            android:id="@+id/tv_telefone_aluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Telefone"
+            app:layout_constraintStart_toStartOf="@+id/nome_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/nome_aluno" />
+
+        <EditText
+            android:id="@+id/edt_tel_aluno"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/nome_aluno"
+            app:layout_constraintStart_toStartOf="@+id/tv_telefone_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/tv_telefone_aluno" />
+
+        <TextView
+            android:id="@+id/tv_turma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Turma"
+            app:layout_constraintStart_toStartOf="@+id/edt_tel_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/edt_tel_aluno" />
+
+        <Spinner
+            android:id="@+id/edt_turma"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_tel_aluno"
+            app:layout_constraintStart_toStartOf="@+id/tv_turma"
+            app:layout_constraintTop_toBottomOf="@+id/tv_turma" />
+
+        <TextView
+            android:id="@+id/tv_responsavel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Responsavel"
+            app:layout_constraintStart_toStartOf="@+id/edt_turma"
+            app:layout_constraintTop_toBottomOf="@+id/edt_turma" />
+
+        <EditText
+            android:id="@+id/edt_responsavel"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_turma"
+            app:layout_constraintStart_toStartOf="@+id/tv_responsavel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_responsavel" />
+
+        <TextView
+            android:id="@+id/tv_tel_responsavel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Telefone"
+            app:layout_constraintStart_toStartOf="@+id/edt_responsavel"
+            app:layout_constraintTop_toBottomOf="@+id/edt_responsavel" />
+
+        <EditText
+            android:id="@+id/edt_tel_responsavel"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_responsavel"
+            app:layout_constraintStart_toStartOf="@+id/tv_tel_responsavel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tel_responsavel" />
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="@+id/edt_tel_responsavel"
+            app:layout_constraintStart_toStartOf="@+id/edt_tel_responsavel"
+            app:layout_constraintTop_toBottomOf="@+id/edt_tel_responsavel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

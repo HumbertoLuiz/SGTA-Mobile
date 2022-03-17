@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CadastroServidor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayoutcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/tv_cadastro_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Servidor"
+            app:layout_constraintBottom_toTopOf="@+id/divider_servidor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.407"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_servidor"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_cadastro_servidor" />
+
+        <EditText
+            android:id="@+id/edt_matricula_servidor"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/edt_cpf_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matricula_servidor" />
+
+        <TextView
+            android:id="@+id/tv_cpf_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:text="Cpf"
+            app:layout_constraintStart_toEndOf="@+id/tv_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_senha" />
+
+        <TextView
+            android:id="@+id/tv_matricula_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matricula"
+            app:layout_constraintStart_toStartOf="@+id/spinnerPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerPerfil" />
+
+        <EditText
+            android:id="@+id/edt_cpf_servidor"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@+id/edt_senha"
+            app:layout_constraintStart_toEndOf="@+id/edt_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cpf_servidor" />
+
+        <TextView
+            android:id="@+id/tv_nome_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            app:layout_constraintStart_toStartOf="@+id/edt_matricula_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_matricula_servidor" />
+
+        <EditText
+            android:id="@+id/edt_nome_servidor"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_cpf_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_nome_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nome_servidor" />
+
+        <TextView
+            android:id="@+id/tv_telefone_servidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Telefone"
+            app:layout_constraintStart_toStartOf="@+id/edt_nome_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nome_servidor" />
+
+        <EditText
+            android:id="@+id/edt_tel_servidor"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_nome_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_telefone_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_telefone_servidor" />
+
+        <TextView
+            android:id="@+id/tv_cargo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Cargo"
+            app:layout_constraintStart_toStartOf="@+id/edt_tel_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/edt_tel_servidor" />
+
+        <Spinner
+            android:id="@+id/edt_cargo"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_tel_servidor"
+            app:layout_constraintStart_toStartOf="@+id/tv_cargo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cargo" />
+
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="@+id/edt_cargo"
+            app:layout_constraintStart_toStartOf="@+id/edt_cargo"
+            app:layout_constraintTop_toBottomOf="@+id/edt_cargo" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="@+id/divider_servidor"
+            app:layout_constraintTop_toBottomOf="@+id/divider_servidor" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@+id/tv_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+        <EditText
+            android:id="@+id/edt_senha"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/edt_email"
+            app:layout_constraintStart_toEndOf="@+id/spinnerPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/tv_senha" />
+
+        <TextView
+            android:id="@+id/tv_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            app:layout_constraintStart_toStartOf="@+id/edt_email"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+
+        <TextView
+            android:id="@+id/tv_senha"
+            android:layout_width="44dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="130dp"
+            android:text="Senha"
+            app:layout_constraintStart_toEndOf="@+id/tv_perfil"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+
+        <Spinner
+            android:id="@+id/spinnerPerfil"
+            android:layout_width="150dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintEnd_toStartOf="@+id/edt_senha"
+            app:layout_constraintStart_toStartOf="@+id/tv_perfil"
+            app:layout_constraintTop_toBottomOf="@+id/tv_perfil" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

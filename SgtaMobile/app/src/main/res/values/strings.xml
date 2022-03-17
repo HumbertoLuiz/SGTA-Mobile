@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">SgtaMobile</string>
+    <string name="pref_token_label" translatable="false">token</string>
+    <string name="pref_token_key" translatable="false">token</string>
+    <string name="pref_token_default" translatable="false">vide</string>
+
+    <string name="navigation_drawer_open">Open Drawer</string>
+    <string name="navigation_drawer_close">Close Drawer</string>
+
+    <string name="title_home">Pricipal</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="title_notifications">Notificações</string>
+    <string name="lista_aluno">Listar Aluno</string>
+    <string name="cadastro_aluno">Cadastro Aluno</string>
+    <string name="cadastro_curso">Cadastro Curso</string>
+    <string name="cadastro_servidor">Cadastro Servidor</string>
+    <string name="cadastro_tarefa">Cadastro Tarefa</string>
+    <string name="sistema_gerencimento_de_tarefas">Sistema Gerencimento de Tarefas</string>
+    <string name="title_activity_main_navegation">MainNavegationActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="icon_menu_esquerdo">Icones Menu Esquerdo</string>
+    <string name="gerenciamente_do_sistema">Gerenciamente do Sistema</string>
+    <string name="icon_menu_direito">Icom Menu Direito</string>
+    <string name="voltar">Voltar</string>
+    <string name="create_account">Criar Conta</string>
+    <string name="digite_password">Senha</string>
+    <string name="email_address">Endereco Email</string>
+    <string name="password">Password</string>
+    <string name="email"> Email</string>
+
+    <string name="Aluno">Aluno</string>
+    <string name="curso">Curso</string>
+    <string name="servidor">Servidor</string>
+    <string name="tarefa">Tarefa</string>
+    <string name="lista_curso">Listar Curso</string>
+    <string name="lista_servidor">Listar Servidor</string>
+    <string name="lista_tarefa">Listar Tarefa</string>
+    <string name="nome">Nome</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
