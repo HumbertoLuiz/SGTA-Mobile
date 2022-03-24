@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import br.edu.ifpr.sgtamobile.R;
 import br.edu.ifpr.sgtamobile.adapter.CursoFragmentAdapter;
+import br.edu.ifpr.sgtamobile.adapter.FragmentAdapter;
 
 public class CursoActivity extends AppCompatActivity {
 

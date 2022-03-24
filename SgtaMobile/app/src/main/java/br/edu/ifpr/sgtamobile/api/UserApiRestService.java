@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.edu.ifpr.sgtamobile.model.Token;
 import br.edu.ifpr.sgtamobile.model.User;
+import br.edu.ifpr.sgtamobile.model.Usuario;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -16,7 +17,7 @@ import retrofit2.http.Query;
 public interface UserApiRestService {
 
   @GET("users/")
-  Call<List<User>> getUsers();
+  Call<List<Usuario>> getUsers();
 
 
   @GET("users/{field}/{searchfield}")
@@ -39,7 +40,7 @@ public interface UserApiRestService {
 
 
   @POST("login")
-    Call<Token> user (@Body User user);
+    Call<Token> user (@Body Usuario usuario);
 
    // @GET("users")
   //  Call<List<UserApiRestService>> getUsers();

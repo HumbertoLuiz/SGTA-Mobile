@@ -9,19 +9,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Collections;
+import java.util.List;
+
 import br.edu.ifpr.sgtamobile.R;
-import br.edu.ifpr.sgtamobile.api.AlunoApiRestService;
 import br.edu.ifpr.sgtamobile.api.ServidorApiRestService;
-import br.edu.ifpr.sgtamobile.model.Aluno;
 import br.edu.ifpr.sgtamobile.model.Cargo;
-import br.edu.ifpr.sgtamobile.model.Responsavel;
 import br.edu.ifpr.sgtamobile.model.Role;
 import br.edu.ifpr.sgtamobile.model.Servidor;
 import br.edu.ifpr.sgtamobile.model.Usuario;
@@ -37,8 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Use the {@link CadastroServidor#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CadastroServidor extends Fragment implements
-        AdapterView.OnItemSelectedListener  {
+public class CadastroServidor extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,12 +77,10 @@ public class CadastroServidor extends Fragment implements
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    String[] permissao = {"ROLE_ADMIN", "ROLE_USER", "ROLE_GUEST"};
-    String[] carg = {"PROFESSOR", "PEDAGOGA", "ADMINISTRADOR"};
+
     EditText edt_email;
     EditText edt_senha;
-    EditText edt_perfil;
-    EditText edt_cargo;
+    Spinner spinnerPerfil;
     EditText edt_matricula_servidor;
     EditText edt_cpf_servidor;
     EditText edt_nome_servidor;
@@ -92,9 +88,9 @@ public class CadastroServidor extends Fragment implements
     Spinner spinnerCargo ;
     Button btn_salvar;
     Usuario usuario;
-    Role roles;
+    List<String> roles;
     Cargo cargo;
-    String matricula, cpf, nome, telefone, email, role, password;
+    String matricula, cpf, nome, telefone, email, password;
 
 
     @Override
@@ -104,35 +100,33 @@ public class CadastroServidor extends Fragment implements
         View view =inflater.inflate(R.layout.fragment_cadastro_servidor, container, false);
 
         edt_email = view.findViewById(R.id.edt_email);
+   //     spinnerPerfil = view.findViewById(R.id.spinnerPerfil);
         edt_senha = view.findViewById(R.id.edt_senha);
         edt_matricula_servidor = view.findViewById(R.id.edt_matricula_servidor);
         edt_cpf_servidor = view.findViewById(R.id.edt_cpf_servidor);
         edt_nome_servidor = view.findViewById(R.id.edt_nome_servidor);
         edt_telefone_servidor = view.findViewById(R.id.edt_tel_servidor);
+      //  spinnerCargo = view.findViewById(R.id.spinnerCargo);
+        Spinner spinnerRole  = view.findViewById(R.id.spinnerPerfil);
+        spinnerRole.setAdapter(new ArrayAdapter<Role>(getActivity(), android.R.layout.simple_spinner_item, Collections.singletonList(Role.ROLE_ADMIN)));
 
-        Spinner cargos = view.findViewById(R.id.edt_cargo);
-        cargos.setOnItemSelectedListener(this);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,carg);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cargos.setAdapter(adapter);
-
-        Spinner perfil = view.findViewById(R.id.spinnerPerfil);
-        perfil.setOnItemSelectedListener(this);
-        ArrayAdapter  adapter1 = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,permissao);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        perfil.setAdapter(adapter1);
+        Spinner spinnerCargos  = view.findViewById(R.id.spinnerCargo);
+        spinnerCargos.setAdapter(new ArrayAdapter<Cargo>(getActivity(), android.R.layout.simple_spinner_item, Cargo.values()));
 
         btn_salvar=view.findViewById(R.id.btn_salvar);
         btn_salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("inresponse","Responseunsuccessful Mehir");
+               Log.i("inresponse","Responseunsuccessful Mehir");
                email = edt_email.getText().toString();
+               roles = Collections.singletonList(spinnerRole.getSelectedItem().toString().trim());
                password = edt_senha.getText().toString();
                matricula = edt_matricula_servidor.getText().toString();
                cpf = edt_cpf_servidor.getText().toString();
                nome = edt_nome_servidor.getText().toString();
                telefone = edt_telefone_servidor.getText().toString();
+               cargo = Cargo.valueOf(spinnerCargos.getSelectedItem().toString().trim());
+
 
                 Log.i("inresponse","Responseunsuccessful ");
 
@@ -162,7 +156,9 @@ public class CadastroServidor extends Fragment implements
                             edt_nome_servidor.getText().clear();
                             edt_telefone_servidor.getText().clear();
                             edt_email.getText().clear();
-                            edt_senha.getText().toString();
+                            edt_senha.getText().clear();
+                         //   spinnerCargo.getText().clear();
+                        //    spinnerPerfil.getText().clear();
 
                             Toast.makeText(getActivity(),"Client successfully added",Toast.LENGTH_SHORT).show();
 
@@ -187,14 +183,4 @@ public class CadastroServidor extends Fragment implements
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String string = permissao[i];
-        String string1 = carg[1];
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

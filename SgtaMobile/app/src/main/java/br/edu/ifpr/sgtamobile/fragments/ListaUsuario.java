@@ -1,18 +1,24 @@
 package br.edu.ifpr.sgtamobile.fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +27,11 @@ import br.edu.ifpr.sgtamobile.R;
 import br.edu.ifpr.sgtamobile.adapter.ItemAdapter;
 import br.edu.ifpr.sgtamobile.api.UserApiRestService;
 import br.edu.ifpr.sgtamobile.model.User;
+import br.edu.ifpr.sgtamobile.model.Usuario;
+import br.edu.ifpr.sgtamobile.ui.EditarUsuario;
+import br.edu.ifpr.sgtamobile.ui.LoginActivity;
+import br.edu.ifpr.sgtamobile.ui.MainActivity;
+import br.edu.ifpr.sgtamobile.utils.Utility;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -75,40 +86,56 @@ public class ListaUsuario extends Fragment {
     }
 
 
+
     Button viewAllbtn;
     TableLayout userstable;
     ListView myListView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_lista_usuario,container,false);
-           viewAllbtn=view.findViewById(R.id.ViewAllbtn);
+       /// viewAllbtn=view.findViewById(R.id.ViewAllbtn);
         userstable=view.findViewById(R.id.ViewAllClientTable);
         Log.i("inOncreate","were here");
 
-        Retrofit retrofit= new Retrofit.Builder()
-                .baseUrl("http://192.168.100.182:8080/")
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Utility.BASE_URL_USERS)
+                .client(Utility.getClientHttpForAll(getApplicationContext()))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         UserApiRestService userApi= retrofit.create(UserApiRestService.class);
-        Call<List<User>> call = userApi.getUsers();
-        call.enqueue(new Callback<List<User>>() {
+        Call<List<Usuario>> call = userApi.getUsers();
+        call.enqueue(new Callback<List<Usuario>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 if (!response.isSuccessful()){
                     Log.i("inresponse","Responseunsuccessful");
                 }
                 Log.i("inresponse","Response returned");
-                List<User> users=response.body();
+                List<Usuario> users=response.body();
 
-                myListView =(ListView) view.findViewById(R.id.mydataListView);
+                ListView myListView  =(ListView) view.findViewById(R.id.mydataListView);
                 ItemAdapter itemAdapter= new ItemAdapter(getActivity(),users);
                 myListView.setAdapter(itemAdapter);
+                myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(ListaUsuario.this.getActivity(), EditarUsuario.class);
+                     //   intent.putExtras("usuario", users.get(i));
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+
+                    }
+                });
+
+
+
             }
 
             @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
                 if (t instanceof IOException){
 
                     Log.i("inresponse",t.getMessage());
@@ -119,17 +146,12 @@ public class ListaUsuario extends Fragment {
                 }
             }
         });
-        viewAllbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //description.setText("List of All Clients Viewed");
 
-                viewAllbtn.setVisibility(View.GONE);
-                userstable.setVisibility(View.VISIBLE);
+            return view;
+    }
 
-            }
-        });
-        return view;
+    private Context getApplicationContext() {
+        return  null;
     }
 
 }

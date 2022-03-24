@@ -1,5 +1,7 @@
 package br.edu.ifpr.sgtamobile.fragments;
 
+import static br.edu.ifpr.sgtamobile.model.Role.ROLE_USER;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+
+import com.fasterxml.jackson.databind.util.EnumValues;
+
+import java.util.Collections;
+import java.util.List;
 
 import br.edu.ifpr.sgtamobile.R;
 import br.edu.ifpr.sgtamobile.api.AlunoApiRestService;
@@ -35,8 +42,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Use the {@link CadastroAluno#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CadastroAluno extends Fragment implements
-        AdapterView.OnItemSelectedListener  {
+public class CadastroAluno extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,22 +84,25 @@ public class CadastroAluno extends Fragment implements
         }
     }
 
-
-
-    String[] permissao = {"ROLE_ADMIN", "ROLE_USER", "ROLE_GUEST"};
     EditText edt_email;
     EditText edt_senha;
-    EditText edt_perfil;
     EditText edt_cpf;
     EditText edt_matricula;
     EditText edt_nome_aluno;
     EditText edt_tel_aluno;
     EditText edt_responsavel;
     EditText edt_tel_responsavel;
-    Spinner spinnerPerfil;
-    String email ,password,matricula, cpf,nomeAluno, telefoneAluno,nomeResponsavel,telefoneResponsavel, role;
+    EditText spinnerPerfil;
+    String email;
+    String password;
+    String matricula;
+    String cpf;
+    String nomeAluno;
+    String telefoneAluno;
+    String nomeResponsavel;
+    String telefoneResponsavel;
+    List<String> roles;
     Usuario usuario;
-    Role roles;
     Responsavel responsavel;
     Button btn_salvar;
 
@@ -110,19 +119,18 @@ public class CadastroAluno extends Fragment implements
         edt_responsavel = view.findViewById(R.id.edt_responsavel);
         edt_tel_responsavel = view.findViewById(R.id.edt_tel_responsavel);
 
-        Spinner perfil = view.findViewById(R.id.spinnerPerfil);
-        perfil.setOnItemSelectedListener(this);
-        ArrayAdapter  adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,permissao);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        perfil.setAdapter(adapter);
+        Spinner spinnerRole  = view.findViewById(R.id.spinnerPerfil);
+        spinnerRole.setAdapter(new ArrayAdapter<Role>(getActivity(), android.R.layout.simple_spinner_item, Collections.singletonList(Role.ROLE_USER)));
+
 
         btn_salvar=view.findViewById(R.id.btn_salvar);
         btn_salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 email = edt_email.getText().toString();
 
-          //    perfil = spinnerPerfil.getText().toString();
+                roles = Collections.singletonList(spinnerRole.getSelectedItem().toString().trim());
 
                 password = edt_senha.getText().toString();
 
@@ -188,15 +196,6 @@ public class CadastroAluno extends Fragment implements
         return null ;
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-    String string = permissao[i];
-    //edt_tel_.setText(string);
 
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

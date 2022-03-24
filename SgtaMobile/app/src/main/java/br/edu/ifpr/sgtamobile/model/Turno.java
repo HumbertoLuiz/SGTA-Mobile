@@ -1,10 +1,16 @@
 package br.edu.ifpr.sgtamobile.model;
 
-public enum Turno {
+import java.io.Serializable;
 
-    MATUTINO("Matutino"),
-    VESPERTINO("Vespertino"),
-    NOTURNO("Noturno"), INTEGRAL("Integral");
+public enum Turno implements Serializable {
+
+    MATUTINO("MATUTINO"),
+
+    VESPERTINO("VESPERTINO"),
+
+    NOTURNO("NOTURNO"),
+
+    INTEGRAL("INTEGRAL");
 
     private String nome;
     private String valor;
@@ -18,11 +24,10 @@ public enum Turno {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getValor() {
-        return valor;
-    }
-    public void setValor(String valor) {
-        this.valor = valor;
-    }
 
+
+    @Override
+    public String toString() {
+        return  nome ;
+    }
 }

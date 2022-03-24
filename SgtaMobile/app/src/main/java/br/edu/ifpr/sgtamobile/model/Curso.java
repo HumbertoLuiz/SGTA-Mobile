@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Curso implements Serializable {
 
-    private Integer id;
+    private int cursoId;
 
     private String descricao;
 
@@ -16,26 +16,21 @@ public class Curso implements Serializable {
 
     private Turno turno;
 
-    private List<Disciplina> disciplina;
+    private List<Disciplina> disciplinas;
 
-
-    public Curso() {
-    }
-
-    public Curso(String descricao, String ano,Turno turno, List<Disciplina> disciplina) {
+    public Curso(String descricao, String ano, Turno turno, List<Disciplina> disciplinas) {
         this.descricao = descricao;
         this.ano = ano;
         this.turno = turno;
-
-        this.disciplina = disciplina;
+        this.disciplinas = disciplinas;
     }
 
-    public Integer getId() {
-        return id;
+    public int getCursoId() {
+        return cursoId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCursoId(int cursoId) {
+        this.cursoId = cursoId;
     }
 
     public String getDescricao() {
@@ -46,6 +41,14 @@ public class Curso implements Serializable {
         this.descricao = descricao;
     }
 
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
     public Turno getTurno() {
         return turno;
     }
@@ -54,19 +57,11 @@ public class Curso implements Serializable {
         this.turno = turno;
     }
 
-    public List<Disciplina> getDisciplina() {
-        return disciplina;
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
 
-    public void setDisciplina(List<Disciplina> disciplina) {
-        this.disciplina = disciplina;
-    }
-
-    public String getAno() {
-        return ano;
-    }
-
-    public void setAno(String ano) {
-        this.ano = ano;
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 }

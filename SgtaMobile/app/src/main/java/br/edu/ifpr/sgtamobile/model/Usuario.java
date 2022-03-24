@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Usuario implements Serializable {
 
@@ -17,10 +18,10 @@ public class Usuario implements Serializable {
     @SerializedName("password")
     private String password;
 
-    @SerializedName("role")
-    private Role roles;
+  //  @SerializedName("roles")
+    private List<String> roles;
 
-    public Usuario(String json) {
+ /*   public Usuario(String json) {
         try {
             Usuario usuario = new ObjectMapper().readValue(json, Usuario.class);
             this.id = usuario.getId();
@@ -30,15 +31,28 @@ public class Usuario implements Serializable {
         } catch (JsonProcessingException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 
     public Usuario() {
     }
 
-    public Usuario(String email, String password, Role roles) {
+    public Usuario(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+/* public Usuario(String email, String password, Role roles) {
         this.email = email;
         this.password = password;
         this.roles = roles;
+    }*/
+
+    public Usuario(String email, String password, List<String> roles) {
+        this.email =email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public Usuario(String email, String password, Role roles) {
     }
 
     public Integer getId() {
@@ -65,11 +79,23 @@ public class Usuario implements Serializable {
         this.password = password;
     }
 
-    public Role getRoles() {
+ /*   public Role getRoles() {
         return roles;
     }
 
     public void setRoles(Role roles) {
         this.roles = roles;
+    }*/
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public String toJson() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException ex) {
+            return null;
+        }
     }
 }

@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void Aluno(View view) {
         Intent intent = new Intent(this, AlunoActivity.class);
         startActivity(intent);

@@ -6,11 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import br.edu.ifpr.sgtamobile.fragments.AlunoMyItemRecyclerViewAdapter;
 import br.edu.ifpr.sgtamobile.fragments.CadastroAluno;
+import br.edu.ifpr.sgtamobile.fragments.ListaAluno;
 
 public class AlunoFragmentAdapter extends FragmentStateAdapter {
-
     public AlunoFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
@@ -21,7 +20,7 @@ public class AlunoFragmentAdapter extends FragmentStateAdapter {
 
         switch (position){
             case 1:
-                return new AlunoMyItemRecyclerViewAdapter.ListaAluno();
+                return new ListaAluno();
 
         }
 
@@ -33,3 +32,4 @@ public class AlunoFragmentAdapter extends FragmentStateAdapter {
         return 2;
     }
 }
+

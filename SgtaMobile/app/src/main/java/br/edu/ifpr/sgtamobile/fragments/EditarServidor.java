@@ -1,21 +1,41 @@
 package br.edu.ifpr.sgtamobile.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import br.edu.ifpr.sgtamobile.R;
+import br.edu.ifpr.sgtamobile.api.ServidorApiRestService;
+import br.edu.ifpr.sgtamobile.model.Cargo;
+import br.edu.ifpr.sgtamobile.model.Role;
+import br.edu.ifpr.sgtamobile.model.Servidor;
+import br.edu.ifpr.sgtamobile.model.Usuario;
+import br.edu.ifpr.sgtamobile.utils.Utility;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link EditarServidor#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EditarServidor extends Fragment {
+public class EditarServidor extends Fragment  implements
+        AdapterView.OnItemSelectedListener  {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,11 +76,127 @@ public class EditarServidor extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    String[] permissao = {"ROLE_ADMIN", "ROLE_USER", "ROLE_GUEST"};
+    String[] carg = {"PROFESSOR", "PEDAGOGA", "ADMINISTRADOR"};
+    EditText edt_email;
+    EditText edt_senha;
+    Spinner spinnerPerfil;
+    EditText edt_matricula_servidor;
+    EditText edt_cpf_servidor;
+    EditText edt_nome_servidor;
+    EditText edt_telefone_servidor;
+    Spinner spinnerCargo ;
+    Button btn_salvar;
+    Usuario usuario;
+    Role roles;
+    Cargo cargo;
+    String matricula;
+    String cpf;
+    String nome;
+    String telefone;
+    String email;
+    String role;
+    String password;
+    String servidorId;
+    Servidor servidor;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_servidor, container, false);
+        View view =inflater.inflate(R.layout.fragment_editar_servidor, container, false);
+
+        edt_email = view.findViewById(R.id.edt_email);
+        edt_senha = view.findViewById(R.id.edt_senha);
+        edt_matricula_servidor = view.findViewById(R.id.edt_matricula_servidor);
+        edt_cpf_servidor = view.findViewById(R.id.edt_cpf_servidor);
+        edt_nome_servidor = view.findViewById(R.id.edt_nome_servidor);
+        edt_telefone_servidor = view.findViewById(R.id.edt_tel_servidor);
+
+
+        Spinner cargos = view.findViewById(R.id.spinnerCargo);
+        cargos.setOnItemSelectedListener(this);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,carg);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cargos.setAdapter(adapter);
+
+        Spinner perfil = view.findViewById(R.id.spinnerPerfil);
+        perfil.setOnItemSelectedListener(this);
+        ArrayAdapter  adapter1 = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,permissao);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        perfil.setAdapter(adapter1);
+
+        btn_salvar=view.findViewById(R.id.btn_salvar);
+        btn_salvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                edt_email.setText(servidor.getUsuario().getEmail());
+
+                Log.i("inresponse","Responseunsuccessful Mehir");
+                email = edt_email.getText().toString();
+                password = edt_senha.getText().toString();
+                matricula = edt_matricula_servidor.getText().toString();
+                cpf = edt_cpf_servidor.getText().toString();
+                nome = edt_nome_servidor.getText().toString();
+                telefone = edt_telefone_servidor.getText().toString();
+
+                Log.i("inresponse","Responseunsuccessful ");
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(Utility.BASE_URL_USERS)
+                        .client(Utility.getClientHttpForAll(getApplicationContext()))
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                ServidorApiRestService service = retrofit.create(ServidorApiRestService.class);
+                Log.i("inresponse","Responseunsuccessful Mehir");
+            //    Call<Void> call = service.EditServidor(servidorId,email,password,nome,matricula,cpf,telefone);
+              /*  call.enqueue(new Callback<Void>() {
+
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+
+                        if (!response.isSuccessful()){
+                            Log.i("inresponse","Responseunsuccessful Mehir");
+                        }
+                        if (response.code()==200){
+                            edt_cpf_servidor.getText().clear();
+                            edt_matricula_servidor.getText().clear();
+                            edt_nome_servidor.getText().clear();
+                            edt_telefone_servidor.getText().clear();
+                            edt_email.getText().clear();
+                            edt_senha.getText().toString();
+
+                            Toast.makeText(getActivity(),"Client successfully added",Toast.LENGTH_SHORT).show();
+
+                            Log.i("inresponse","mehir");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+                    }
+                });*/
+
+            }
+        });
+
+        return view;
+    }
+
+    private Context getApplicationContext() {
+        return  null;
+    }
+
+
+   @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

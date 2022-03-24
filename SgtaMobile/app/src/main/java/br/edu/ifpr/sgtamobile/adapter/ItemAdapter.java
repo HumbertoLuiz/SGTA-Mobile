@@ -5,20 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 
 import java.util.List;
 
 import br.edu.ifpr.sgtamobile.R;
-import br.edu.ifpr.sgtamobile.model.User;
+import br.edu.ifpr.sgtamobile.model.Usuario;
 
 public class ItemAdapter extends BaseAdapter {
     LayoutInflater mInflater;
 
-    List<User> list;
+    List<Usuario> list;
 
-    public ItemAdapter(Context c, List<User> mylist) {
+    public ItemAdapter(Context c, List<Usuario> mylist) {
 
         list=mylist;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -42,17 +43,34 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = mInflater.inflate(R.layout.layout_list_user, null);
-        TextView idTextView = (TextView) v.findViewById(R.id.id);
+    //    TextView idTextView = (TextView) v.findViewById(R.id.id);
         TextView nameTextView = (TextView) v.findViewById(R.id.name);
-        TextView perfilTextView = (TextView) v.findViewById(R.id.perfil);
 
-        Integer id = list.get(i).getId();
+     //   Integer id = list.get(i).getId();
         String name = list.get(i).getEmail();
-        Enum perfil = list.get(i).getRoles();
 
 
-        idTextView.setText(id.toString());
+
+     //   idTextView.setText(id.toString());
         nameTextView.setText(name);
+        Button deleteBtn = (Button) v.findViewById(R.id.delete_btn);
+        Button addBtn = (Button)v.findViewById(R.id.add_btn);
+
+        deleteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //do something
+                list.remove(i); //or some other task
+                notifyDataSetChanged();
+            }
+        });
+        addBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //do something
+                notifyDataSetChanged();
+            }
+        });
 
 
         return v;

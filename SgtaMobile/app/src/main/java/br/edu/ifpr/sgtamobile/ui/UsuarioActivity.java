@@ -25,7 +25,7 @@ public class UsuarioActivity extends AppCompatActivity {
         FragmentManager fm= getSupportFragmentManager();
         adapter = new FragmentAdapter(fm,getLifecycle());
         pager2.setAdapter(adapter);
-        tabLayout.addTab(tabLayout.newTab().setText("Cadastrar"));
+      //  tabLayout.addTab(tabLayout.newTab().setText("Cadastrar"));
         tabLayout.addTab(tabLayout.newTab().setText("Listar"));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -38,7 +38,7 @@ public class UsuarioActivity extends AppCompatActivity {
 
             }
 
-            @Override
+           @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
             }

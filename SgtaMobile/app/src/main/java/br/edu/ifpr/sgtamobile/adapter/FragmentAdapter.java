@@ -25,7 +25,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
         }
 
-        return new CadastrarUsuario();
+        return new ListaUsuario();
     }
 
     @Override

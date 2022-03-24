@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:bottom="1.5dp"
+      android:top="1.5dp"
+      android:right="1.5dp"
+      android:drawable="@drawable/ripple_endicon_blue"
+      android:gravity="center_horizontal|center_vertical"
+      android:width="53dp"
+      android:height="53dp" />
+  <item
+      android:drawable="@drawable/ic_baseline_add_24"
+      android:gravity="center_horizontal|center_vertical"
+      android:width="36dp"
+      android:height="36dp" />
+</layer-list>

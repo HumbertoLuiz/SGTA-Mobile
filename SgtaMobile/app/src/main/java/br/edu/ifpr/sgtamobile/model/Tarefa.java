@@ -1,7 +1,6 @@
 package br.edu.ifpr.sgtamobile.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
 
 public class Tarefa {
 
@@ -15,28 +14,26 @@ public class Tarefa {
 
     private String dtFinalizacaoTarefa;
 
-
-    public Tarefa(String json) {
-        try {
-            Tarefa tarefa = new ObjectMapper().readValue(json, Tarefa.class);
-            this.id = tarefa.getId();
-            this.descricao = tarefa.getDescricao();
-            this.local = tarefa.getLocal();
-            this.dtCriacaoTarefa = tarefa.getDtCriacaoTarefa();
-            this.dtFinalizacaoTarefa = getDtFinalizacaoTarefa();
-        } catch (JsonProcessingException ex) {
-            ex.printStackTrace();
-        }
-    }
+    private Disciplina disciplina ;
 
     public Tarefa() {
     }
 
-    public Tarefa(String descricao, String local, String dtCriacaoTarefa, String dtFinalizacaoTarefa) {
+    public Tarefa(String descricao, String local, String dtCriacaoTarefa, String dtFinalizacaoTarefa, Disciplina disciplina) {
         this.descricao = descricao;
         this.local = local;
         this.dtCriacaoTarefa = dtCriacaoTarefa;
         this.dtFinalizacaoTarefa = dtFinalizacaoTarefa;
+        this.disciplina = disciplina;
+    }
+
+    public Tarefa(Integer id, String descricao, String local, String dtCriacaoTarefa, String dtFinalizacaoTarefa, Disciplina disciplina) {
+        this.id = id;
+        this.descricao = descricao;
+        this.local = local;
+        this.dtCriacaoTarefa = dtCriacaoTarefa;
+        this.dtFinalizacaoTarefa = dtFinalizacaoTarefa;
+        this.disciplina = disciplina;
     }
 
     public Integer getId() {
@@ -79,12 +76,11 @@ public class Tarefa {
         this.dtFinalizacaoTarefa = dtFinalizacaoTarefa;
     }
 
-    public String toJson() {
-        try {
-            return new ObjectMapper().writeValueAsString(this);
-        } catch (JsonProcessingException ex) {
-            return null;
-        }
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
 }

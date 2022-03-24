@@ -6,27 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ListaUsuario">
 
-
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayoutcontainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/ViewAllbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="150dp"
-            android:text="listar"
-            android:background="@drawable/btns"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_cabecalho" />
 
         <TextView
             android:id="@+id/tv_cabecalho"
@@ -46,7 +29,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="1dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_cabecalho">
@@ -54,36 +37,18 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/verde">
+                android:background="@color/laranja">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="id"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:gravity="center_horizontal"
+                    android:gravity="left"
                     android:padding="10sp"
                     android:text="Email"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="Perfil"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
 
@@ -92,7 +57,9 @@
             <ListView
                 android:id="@+id/mydataListView"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+                android:layout_height="fill_parent"
+
+                />
 
 
 

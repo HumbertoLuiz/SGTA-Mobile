@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public abstract class Pessoa implements Serializable {
 
@@ -41,6 +42,12 @@ public abstract class Pessoa implements Serializable {
         this.cpf = cpf;
         this.telefone = telefone;
         this.usuario = usuario;
+    }
+
+    public Pessoa(String nome, String cpf, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
     }
 
     public Pessoa() {
@@ -87,5 +94,13 @@ public abstract class Pessoa implements Serializable {
         this.usuario = usuario;
     }
 
+    @Override
+    public boolean equals(Object o){
+        return this.id == ((Pessoa)o).id;
+    }
 
+    @Override
+    public int hashCode(){
+        return this.id;
+    }
 }

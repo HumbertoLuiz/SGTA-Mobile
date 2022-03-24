@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 import br.edu.ifpr.sgtamobile.R;
+import br.edu.ifpr.sgtamobile.adapter.FragmentAdapter;
 import br.edu.ifpr.sgtamobile.adapter.TarefaFragmentAdapter;
 
 public class TarefaActivity extends AppCompatActivity {

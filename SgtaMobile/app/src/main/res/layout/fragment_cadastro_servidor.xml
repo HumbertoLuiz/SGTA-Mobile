@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:text="Servidor"
+            android:text="Servidor "
             app:layout_constraintBottom_toTopOf="@+id/divider_servidor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"
@@ -130,12 +130,10 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_tel_servidor" />
 
         <Spinner
-            android:id="@+id/edt_cargo"
+            android:id="@+id/spinnerCargo"
             android:layout_width="330dp"
             android:layout_height="40dp"
             android:layout_marginTop="0dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/edt_tel_servidor"
             app:layout_constraintStart_toStartOf="@+id/tv_cargo"
             app:layout_constraintTop_toBottomOf="@+id/tv_cargo" />
@@ -147,9 +145,9 @@
             android:layout_height="40dp"
             android:layout_marginTop="0dp"
             android:text="Salvar"
-            app:layout_constraintEnd_toEndOf="@+id/edt_cargo"
-            app:layout_constraintStart_toStartOf="@+id/edt_cargo"
-            app:layout_constraintTop_toBottomOf="@+id/edt_cargo" />
+            app:layout_constraintEnd_toEndOf="@+id/spinnerCargo"
+            app:layout_constraintStart_toStartOf="@+id/spinnerCargo"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCargo" />
 
         <TextView
             android:id="@+id/tv_email"

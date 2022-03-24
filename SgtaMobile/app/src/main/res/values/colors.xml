@@ -18,4 +18,20 @@
     <color name="colorDanger" />
     <color name="colorWarning" />
 
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00CC00</color>
+    <color name="ripple_green">#99AAFFAA</color>
+    <color name="blue">#FF007BFF</color>
+    <color name="blue_link">#FF0000EE</color>
+    <color name="grey">#FF777777</color>
+    <color name="light_grey">#FFAAAAAA</color>
+    <color name="alert_text_success">#FF155724</color>
+    <color name="alert_text_danger">#FF721C24</color>
+    <color name="text_input_hint_text_color">#FF2FB5C4</color>
+    <color name="text_input_box_stroke_color">#FFAAAAAA</color>
+    <color name="grey_200">#FF9A9A9A</color>
+    <color name="grey_500">#FF6D6D6D</color>
+    <color name="grey_700">#FF3C3C3C</color>
+
+
 </resources>

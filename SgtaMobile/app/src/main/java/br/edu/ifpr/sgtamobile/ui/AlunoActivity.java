@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import br.edu.ifpr.sgtamobile.R;
 import br.edu.ifpr.sgtamobile.adapter.AlunoFragmentAdapter;
+import br.edu.ifpr.sgtamobile.adapter.FragmentAdapter;
 
 public class AlunoActivity extends AppCompatActivity {
 

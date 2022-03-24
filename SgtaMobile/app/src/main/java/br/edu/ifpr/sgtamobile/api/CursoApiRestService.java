@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.edu.ifpr.sgtamobile.model.Aluno;
 import br.edu.ifpr.sgtamobile.model.Curso;
+import br.edu.ifpr.sgtamobile.model.Disciplina;
 import br.edu.ifpr.sgtamobile.model.Servidor;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -16,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface CursoApiRestService {
     @GET("cursos/")
-    Call<List<Aluno>> getCursos();
+    Call<List<Curso>> getCursos();
 
     @GET("cursos/{field}/{searchfield}")
     Call<List<Servidor>> getCursoByField(@Path("field") String field, @Path("searchfield") String nome);
@@ -34,6 +35,7 @@ public interface CursoApiRestService {
 
     @POST("cursos")
     Call<Curso> addCurso(@Body Curso curso);
+
 
 
 }

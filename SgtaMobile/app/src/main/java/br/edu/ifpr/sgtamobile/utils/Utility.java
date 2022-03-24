@@ -15,7 +15,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class Utility{
 
 
-    public static String BASE_URL_USERS = "http://192.168.100.127:8080/";
+    public static String BASE_URL_USERS = "http://192.168.100.177:8080/";
 
  //   public static String BASE_URL_REGISTRATIONS = "http://192.168.100.107:8080/registration/api/";
 

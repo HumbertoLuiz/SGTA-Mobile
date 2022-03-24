@@ -39,81 +39,88 @@
 
 
             <Button
-                android:id="@+id/btn_Servidor"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="32dp"
-                android:background="@color/design_default_color_primary_dark"
-                android:text="Servidor"
-                android:onClick="Servidor"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/btn_Turma"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="200dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="32dp"
-                android:background="@color/colorPrimaryDark"
-                android:text="Turmas"
-                android:onClick="Turma"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_Aluno"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="200dp"
+                android:background="@drawable/borda"
                 android:layout_marginEnd="32dp"
-                android:background="@color/amarelo"
-                android:text="Alunos"
-                android:onClick="Aluno"
-                android:textColor="@color/white"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:onClick="Turma"
+
+                android:text="Cursos"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_Servidor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/borda"
+                android:backgroundTint="@color/blue"
+                android:onClick="Servidor"
+                android:text="Servidor"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btn_tarefa"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="200dp"
-                android:layout_marginTop="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="280dp"
                 android:layout_marginEnd="32dp"
-                android:background="@color/verde"
-                android:text="Tarefas"
+                android:backgroundTint="@color/verde"
+                android:background="@drawable/borda"
                 android:onClick="Tarefa"
-                android:textColor="@color/white"
+                android:text="Tarefas"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btn_Usuario"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="360dp"
                 android:layout_marginEnd="32dp"
-                android:background="@color/azulceleste"
-                android:text="Usuários"
+                android:backgroundTint="@color/azulceleste"
+                android:background="@drawable/borda"
                 android:onClick="Usuario"
-                android:textColor="@color/white"
+                android:text="Usuários"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btn_Sair"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="200dp"
-                android:layout_marginTop="350dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="440dp"
                 android:layout_marginEnd="32dp"
-                android:background="@color/laranjaclaro"
+                android:backgroundTint="@color/laranjaclaro"
+                android:background="@drawable/borda"
                 android:text="Sair"
+                android:textColor="@color/black" />
 
-                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_Aluno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/borda"
+                android:backgroundTint="@color/amarelo"
+                android:onClick="Aluno"
+                android:text="Alunos"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
         </FrameLayout>
 
 

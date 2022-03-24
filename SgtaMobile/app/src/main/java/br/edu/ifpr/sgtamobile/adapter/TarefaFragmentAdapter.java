@@ -6,8 +6,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import br.edu.ifpr.sgtamobile.fragments.CadastrarUsuario;
+import br.edu.ifpr.sgtamobile.fragments.CadastroServidor;
 import br.edu.ifpr.sgtamobile.fragments.CadastroTarefa;
 import br.edu.ifpr.sgtamobile.fragments.ListaTarefa;
+import br.edu.ifpr.sgtamobile.fragments.ListaUsuario;
 
 public class TarefaFragmentAdapter extends FragmentStateAdapter {
     public TarefaFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -32,3 +35,4 @@ public class TarefaFragmentAdapter extends FragmentStateAdapter {
         return 2;
     }
 }
+

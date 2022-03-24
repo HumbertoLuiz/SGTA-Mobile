@@ -3,16 +3,29 @@ package br.edu.ifpr.sgtamobile.model;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.List;
+
 public class Disciplina {
 
-    private Integer id;
+    private int discId;
 
     private String descricao;
 
     private Professor professor;
 
+    private  Disciplina  disciplina;
 
     public Disciplina() {
+    }
+
+
+    public Disciplina(int discId, String descricao) {
+        this.discId = discId;
+        this.descricao = descricao;
+    }
+
+    public Disciplina(int discId) {
+        this.discId = discId;
     }
 
     public Disciplina(String descricao, Professor professor) {
@@ -20,12 +33,15 @@ public class Disciplina {
         this.professor = professor;
     }
 
-    public Integer getId() {
-        return id;
+/*   public Disciplina(String dDescricao, Professor professor) {
+    }*/
+
+    public int getDiscId() {
+        return discId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setDiscId(int discId) {
+        this.discId = discId;
     }
 
     public String getDescricao() {
@@ -44,5 +60,11 @@ public class Disciplina {
         this.professor = professor;
     }
 
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
 
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
 }

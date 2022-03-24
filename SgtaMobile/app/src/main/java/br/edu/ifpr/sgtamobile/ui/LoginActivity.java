@@ -18,6 +18,7 @@ import br.edu.ifpr.sgtamobile.R;
 import br.edu.ifpr.sgtamobile.api.UserApiRestService;
 import br.edu.ifpr.sgtamobile.model.Token;
 import br.edu.ifpr.sgtamobile.model.User;
+import br.edu.ifpr.sgtamobile.model.Usuario;
 import br.edu.ifpr.sgtamobile.utils.Utility;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         tlbMainPage = findViewById(R.id.tlb_main_page);
-        setSupportActionBar(tlbMainPage);
+     //   setSupportActionBar(tlbMainPage);
         getSupportActionBar().setTitle("Gerenciamento de Tarefas");
         edtEmail = findViewById(R.id.edt_login_email);
         edtPassword = findViewById(R.id.edt_login_password);
@@ -69,8 +70,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         UserApiRestService service = retrofit.create(UserApiRestService.class);
 
-                        User user = new User(email, password);
-                        service.user(user).enqueue(new Callback<Token>() {
+                        Usuario usuario = new Usuario(email, password);
+                        service.user(usuario).enqueue(new Callback<Token>() {
                             @Override
                             public void onResponse(Call<Token> call, Response<Token> response) {
 
@@ -132,14 +133,5 @@ public class LoginActivity extends AppCompatActivity {
         return status;
     }
 
-    public void novoCadastro(View view) {
-        Intent intent = new Intent(this, UserCadastroActivity.class);
-        startActivity(intent);
-    }
 
-    public void recuperaSenha(View view) {
-        Intent intent = new Intent(this, TrocaSenhaActivity.class);
-        startActivity(intent);
-
-    }
 }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 import br.edu.ifpr.sgtamobile.R;
+import br.edu.ifpr.sgtamobile.adapter.FragmentAdapter;
 import br.edu.ifpr.sgtamobile.adapter.ServidorFragmentAdapter;
 
 public class ServidorActivity extends AppCompatActivity {
@@ -23,7 +24,8 @@ public class ServidorActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout);
         pager2 = findViewById(R.id.view_pager2);
         FragmentManager fm= getSupportFragmentManager();
-        adapter = new ServidorFragmentAdapter(fm,getLifecycle());
+        adapter = new ServidorFragmentAdapter(fm, getLifecycle()) {
+        };
         pager2.setAdapter(adapter);
         tabLayout.addTab(tabLayout.newTab().setText("Cadastrar"));
         tabLayout.addTab(tabLayout.newTab().setText("Listar"));

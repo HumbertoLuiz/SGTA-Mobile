@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.CadastroServidor">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayoutcontainer"
@@ -40,7 +44,7 @@
             android:id="@+id/tv_ano_turma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:text="Ano"
             app:layout_constraintStart_toStartOf="@+id/divider_turma"
@@ -49,14 +53,14 @@
         <EditText
             android:id="@+id/edt_ano_turma"
             android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text=""
-            app:layout_constraintEnd_toStartOf="@+id/edt_turno_turma"
             app:layout_constraintStart_toStartOf="@+id/tv_ano_turma"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ano_turma" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_ano_turma"
+            tools:layout_editor_absoluteX="9dp" />
 
         <TextView
             android:id="@+id/tv_turno_turma"
@@ -71,7 +75,8 @@
         <Spinner
             android:id="@+id/edt_turno_turma"
             android:layout_width="170dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -80,12 +85,33 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_turno_turma" />
 
         <TextView
+            android:id="@+id/tv_curso_turma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Descricao"
+            app:layout_constraintStart_toStartOf="@+id/edt_ano_turma"
+            app:layout_constraintTop_toBottomOf="@+id/edt_ano_turma" />
+
+        <EditText
+            android:id="@+id/edt_curso_turma"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_turno_turma"
+            app:layout_constraintStart_toStartOf="@+id/tv_curso_turma"
+            app:layout_constraintTop_toBottomOf="@+id/tv_curso_turma" />
+
+        <TextView
             android:id="@+id/tv_disciplina_turma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Disciplina"
-            app:layout_constraintStart_toStartOf="@+id/edt_ano_turma"
-            app:layout_constraintTop_toBottomOf="@+id/edt_ano_turma" />
+            app:layout_constraintStart_toStartOf="@+id/edt_curso_turma"
+            app:layout_constraintTop_toBottomOf="@+id/edt_curso_turma" />
 
         <EditText
             android:id="@+id/edt_disciplina_turma"
@@ -94,6 +120,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/edt_curso_turma"
             app:layout_constraintStart_toStartOf="@+id/tv_disciplina_turma"
             app:layout_constraintTop_toBottomOf="@+id/tv_disciplina_turma" />
 
@@ -127,6 +154,6 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_professor_turma" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </ScrollView>
 
 </FrameLayout>
