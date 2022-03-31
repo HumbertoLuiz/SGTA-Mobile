@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CadastroCurso">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="4dp"
+        android:paddingBottom="6dp"
+        android:paddingHorizontal="16dp"
+        android:orientation="vertical"
+        tools:context=".NewContactActivity">
+
+        <TextView
+            android:id="@+id/new_contact_tvLogout"
+            style="@style/tv_logout_style" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@drawable/custom_scrollbar"
+            android:fadeScrollbars="true"
+            android:scrollbarSize="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ano"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/text_input_box_stroke_color"
+                    app:hintTextColor="@color/text_input_hint_text_color">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_contact_tietAno"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="@string/descricao"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/text_input_hint_text_color"
+                    app:boxStrokeColor="@color/text_input_box_stroke_color"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_contact_tietDescricao"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/new_disciplina_tvPrrofessor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="2dp"
+                    android:visibility="gone"
+                    android:text="@string/disciplinas"
+                    android:textSize="17sp"
+                    android:textColor="#FF444444" />
+
+                <ListView
+                    android:id="@+id/new_disciplina_lvProfessores"
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_border"
+                    android:divider="#AFBEBEBE"
+                    android:dividerHeight="1dp"
+                    android:scrollbars="none"
+                    android:tag="lvPhones"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_contact_tilPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="@string/disciplinas"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/text_input_hint_text_color"
+                    app:boxStrokeColor="@color/text_input_box_stroke_color"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/add"
+                    app:endIconTint="@null"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_disciplina_tietProfessor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/new_professor_tvDisciplinas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="2dp"
+                    android:visibility="gone"
+                    android:text="@string/professores"
+                    android:textSize="17sp"
+                    android:textColor="#FF444444" />
+
+                <ListView
+                    android:id="@+id/new_professorcontact_lvDisciplinas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/listview_border"
+                    android:divider="#AFBEBEBE"
+                    android:dividerHeight="1dp"
+                    android:scrollbars="none"
+                    android:tag="lvEmails"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_ŕofessorcontact_tilDisciplina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/text_input_hint_text_color"
+                    app:boxStrokeColor="@color/text_input_box_stroke_color"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/add"
+                    app:endIconTint="@null"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/new_professorcontact_tietDisciplina"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/new_tvMessage"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_Salvar"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/salvar" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</FrameLayout>

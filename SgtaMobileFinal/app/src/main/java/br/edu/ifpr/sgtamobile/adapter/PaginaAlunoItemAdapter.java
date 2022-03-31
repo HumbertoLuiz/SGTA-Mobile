@@ -1,0 +1,62 @@
+package br.edu.ifpr.sgtamobile.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import android.widget.TextView;
+
+import java.util.List;
+
+import br.edu.ifpr.sgtamobile.R;
+import br.edu.ifpr.sgtamobile.model.Tarefa;
+
+public class PaginaAlunoItemAdapter extends BaseAdapter {
+    LayoutInflater mInflater;
+
+     List<Tarefa> list;
+
+    public PaginaAlunoItemAdapter(Context c, List<Tarefa> mylist) {
+
+        list=mylist;
+        mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    public int getCount() {
+        return list.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return list.get(i).getId();
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        View v = mInflater.inflate(R.layout.layout_list_pagina_aluno, null);
+        TextView idTextView = (TextView) v.findViewById(R.id.id);
+        TextView nameTextView = (TextView) v.findViewById(R.id.name);
+
+        Integer id = list.get(i).getId();
+        String name = list.get(i).getDescricao();
+
+
+
+        idTextView.setText(id.toString());
+        nameTextView.setText(name);
+
+
+
+        return v;
+    }
+}
+
+

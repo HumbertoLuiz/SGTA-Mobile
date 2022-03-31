@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="laranja">#C68907</color>
+    <color name="beje">#FFFCE9</color>
+    <color name="azulceleste">#60C3FF</color>
+    <color name="amarelo">#FFFF00</color>
+    <color name="verde">#008000</color>
+    <color name="laranjaclaro">#FFD700</color>
+    <color name="colorPrimaryDark">#F44336</color>
+    <color name="colorDanger" />
+    <color name="colorWarning" />
+
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00CC00</color>
+    <color name="ripple_green">#99AAFFAA</color>
+    <color name="blue">#FF007BFF</color>
+    <color name="blue_link">#FF0000EE</color>
+    <color name="grey">#FF777777</color>
+    <color name="light_grey">#FFAAAAAA</color>
+    <color name="alert_text_success">#FF155724</color>
+    <color name="alert_text_danger">#FF721C24</color>
+    <color name="text_input_hint_text_color">#FF2FB5C4</color>
+    <color name="text_input_box_stroke_color">#FFAAAAAA</color>
+    <color name="grey_200">#FF9A9A9A</color>
+    <color name="grey_500">#FF6D6D6D</color>
+    <color name="grey_700">#FF3C3C3C</color>
+
+
+</resources>
